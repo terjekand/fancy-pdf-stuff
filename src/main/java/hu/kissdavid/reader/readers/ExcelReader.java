@@ -96,6 +96,7 @@ public class ExcelReader {
 
         initRowContainer(sheet);
         Iterator<Row> rowIterator = sheet.rowIterator();
+        rowIterator.next();
         while(rowIterator.hasNext()) {
             addRowToMap(rowIterator.next());
 
@@ -104,12 +105,16 @@ public class ExcelReader {
 
     private void addRowToMap(Row row) {
         Iterator<Cell> cellIterator = row.cellIterator();
-        Set<String> columnCells = new LinkedHashSet<String>();
+        Set<String> columnCells = null;
         Set<String> keys = rowContainer.keySet();
-        while (cellIterator.hasNext()) {
+        Iterator keyIterator = keys.iterator();
+
+        while (cellIterator.hasNext() && keyIterator.hasNext()) {
             Cell cell = cellIterator.next();
+            String actualKey = (String) keyIterator.next();
+            columnCells = rowContainer.get(actualKey);
             columnCells.add(cell.toString());
-            rowContainer.put(keys,columnCells);
+            rowContainer.put(actualKey, columnCells);
         }
 
     }

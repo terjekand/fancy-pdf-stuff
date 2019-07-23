@@ -1,2 +1,4 @@
-hu\kissdavid\reader\Main.class
 hu\kissdavid\reader\readers\ExcelReader.class
+hu\kissdavid\reader\modifier\PDFmodifier.class
+hu\kissdavid\reader\Main.class
+hu\kissdavid\reader\readers\PDFReader.class

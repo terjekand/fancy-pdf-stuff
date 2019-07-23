@@ -1,18 +1,26 @@
 package hu.kissdavid.reader;
 
-import hu.kissdavid.reader.readers.ExcelReader;
 
-import java.io.File;
-import java.util.LinkedList;
+import hu.kissdavid.reader.readers.ExcelReader;
+import hu.kissdavid.reader.readers.PDFReader;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import java.io.IOException;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, InvalidFormatException {
+
         ExcelReader excelReader = new ExcelReader();
-        File file = new File("");
-        LinkedList<String> fileContent = excelReader.readFile(file.getAbsolutePath() + "\\src\\main\\resources\\bajbaj.txt");
-        for(String e : fileContent) {
-            System.out.println(e);
-        }
+        PDFReader pdfReader = new PDFReader();
+
+
+        excelReader.readExcel("\\src\\main\\resources\\tesztadatok.xlsx");
+        pdfReader.readPdf("\\src\\main\\resources\\sablon.pdf");
+
+
+
+
+
+
     }
 }

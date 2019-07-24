@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="excel-reader" target="1.5" />
+      <module name="excel-reader" target="7" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

@@ -35,6 +35,7 @@ public class ExcelReader {
 
 
     public LinkedList<String> readFile(String path) {
+
         LinkedList<String> fileContent = new LinkedList();
         try  {
             FileReader reader = new FileReader(path);
@@ -51,16 +52,13 @@ public class ExcelReader {
         return fileContent;
     }
 
-    public void readExcel(String path) {
-
-
+    public Map<String,Set<String>> readExcel(String path) {
 
         try {
             workbook = WorkbookFactory.create(new File(file.getAbsolutePath() + path));
-        } catch (IOException e) {
+        } catch (IOException | InvalidFormatException e) {
             e.printStackTrace();
-        } catch (InvalidFormatException e) {
-            e.printStackTrace();
+            return null;
         }
 
         Sheet sheet = workbook.getSheetAt(0);
@@ -69,26 +67,13 @@ public class ExcelReader {
         System.out.println("Workbook has " + workbook.getNumberOfSheets() + " Sheets : ");
 
         System.out.println(rowContainer);
-        /*Iterator<Row> rowIterator = sheet.rowIterator();
-        while (rowIterator.hasNext()) {
-            Row row = rowIterator.next();
-
-
-            Iterator<Cell> cellIterator = row.cellIterator();
-
-            while (cellIterator.hasNext()) {
-                Cell cell = cellIterator.next();
-                String cellValue = dataFormatter.formatCellValue(cell);
-                System.out.print(cellValue + "\t");
-            }
-            System.out.println();
-        }
-
         try {
             workbook.close();
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
+            return null;
+        }
+        return rowContainer;
     }
 
 

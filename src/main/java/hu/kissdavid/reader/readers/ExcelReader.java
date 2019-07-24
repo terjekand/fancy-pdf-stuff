@@ -33,25 +33,6 @@ public class ExcelReader {
         this.rowContainer = rowContainer;
     }
 
-
-    public LinkedList<String> readFile(String path) {
-
-        LinkedList<String> fileContent = new LinkedList();
-        try  {
-            FileReader reader = new FileReader(path);
-            BufferedReader br = new BufferedReader(reader);
-            String line = StringUtils.EMPTY;
-            while ((line = br.readLine()) != null) {
-                fileContent.add(line);
-            }
-
-        } catch (IOException e) {
-            System.err.format("IOException: %s%n", e);
-            return null;
-        }
-        return fileContent;
-    }
-
     public Map<String,Set<String>> readExcel(String path) {
 
         try {

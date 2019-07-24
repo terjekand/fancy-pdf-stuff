@@ -28,5 +28,10 @@
     <orderEntry type="library" name="Maven: org.apache.poi:ooxml-schemas:1.1" level="project" />
     <orderEntry type="library" name="Maven: fr.opensagres.xdocreport:fr.opensagres.poi.xwpf.converter.pdf:2.0.1" level="project" />
     <orderEntry type="library" name="Maven: fr.opensagres.xdocreport:fr.opensagres.poi.xwpf.converter.core:2.0.1" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf.tool:xmlworker:5.5.10" level="project" />
+    <orderEntry type="library" name="Maven: commons-httpclient:commons-httpclient:3.1" level="project" />
+    <orderEntry type="library" name="Maven: commons-logging:commons-logging:1.0.4" level="project" />
+    <orderEntry type="library" name="Maven: org.jsoup:jsoup:1.11.3" level="project" />
+    <orderEntry type="library" name="Maven: commons-io:commons-io:2.6" level="project" />
   </component>
 </module>

@@ -1,13 +1,10 @@
 package hu.kissdavid.reader.readers;
 
 import lombok.Getter;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
@@ -36,7 +33,7 @@ public class ExcelReader {
     public Map<String,Set<String>> readExcel(String path) {
 
         try {
-            workbook = WorkbookFactory.create(new File(file.getAbsolutePath() + path));
+            workbook = WorkbookFactory.create(new File(path + "\\input.xlsx"));
         } catch (IOException | InvalidFormatException e) {
             e.printStackTrace();
             return null;
@@ -94,10 +91,6 @@ public class ExcelReader {
             Cell cell = cellIterator.next();
             String cellValue = dataFormatter.formatCellValue(cell);
             rowContainer.put(cellValue, new LinkedHashSet<String>());
-
-            for(int i=1;i<sheet.getLastRowNum();i++){
-                Row contentRows = sheet.getRow(i);
-            }
         }
     }
 

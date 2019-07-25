@@ -1,0 +1,24 @@
+
+Gsquid:S1148›"#Use a logger to log this exception.(€ֹװ…‎ÿÿÿÿ8גדם¢ֲ-
+msquid:S00100#"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±ֽÝ8גדם¢ֲ-
+Fsquid:S1148l"#Use a logger to log this exception.(€ֹװ…‎ÿÿÿÿ8גדם¢ֲ-
+gsquid:CallToDeprecatedMethodw"8Remove this use of "readFileToString"; it is deprecated.(‘8װפÿ¢ֲ-
+Fsquid:S11483"#Use a logger to log this exception.(€ֹװ…‎ÿÿÿÿ8גדם¢ֲ-
+nsquid:CommentedOutCodeLinez"<This block of commented-out lines of code should be removed.(›ױןאüÿÿÿÿ8גדם¢ֲ-
+fsquid:UnusedPrivateMethodr"5Remove this unused private "convertHtmlToPdf" method.(ס®½רÿÿÿÿÿ8גדם¢ֲ-
+hsquid:S2095("JUse try-with-resources or close this "XWPFDocument" in a "finally" clause.(ר»Þ¦8גדם¢ֲ-
+Hsquid:S1481@"*Remove this unused "data2" local variable.(·״§ר8גדם¢ֲ-
+ksquid:S2095'"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(·—ֱ 8¥³ֶ¢ֲ-
+isquid:S1192B"FDefine a constant instead of duplicating this literal "UTF-8" 5 times.(ך£ט¾üÿÿÿÿ8גדם¢ֲ-
+Wsquid:S1854@"9Remove this useless assignment to local variable "data2".(·״§ר8גדם¢ֲ-
+Dsquid:S1172#"&Remove these unused method parameters.(±ֽÝ8גדם¢ֲ-
+isquid:CommentedOutCodeLineu"<This block of commented-out lines of code should be removed.(ׂ׃ּ‏8גדם¢ֲ-
+osquid:CommentedOutCodeLine†"<This block of commented-out lines of code should be removed.(יֹ¡¹תÿÿÿÿ8גדם¢ֲ-
+hsquid:S1854+"ERemove this useless assignment to local variable "paragraphIterator".(÷‰¸‏ÿÿÿÿ8גדם¢ֲ-
+dsquid:S1075."ARefactor your code to get this URI from a customizable parameter.( ”Þûÿÿÿÿ8גדם¢ֲ-
+nsquid:CommentedOutCodeLinea"<This block of commented-out lines of code should be removed.(›רחשרÿÿÿÿ8גדם¢ֲ-
+Ysquid:S1481+"6Remove this unused "paragraphIterator" local variable.(÷‰¸‏ÿÿÿÿ8גדם¢ֲ-
+V
+squid:S106L"9Replace this use of System.out or System.err by a logger.(Úהֳ‡8גדם¢ֲ-
+Usquid:UnusedPrivateMethod\"*Remove this unused private "toPdf" method.(מ±c8גדם¢ֲ-
+osquid:CommentedOutCodeLineˆ"<This block of commented-out lines of code should be removed.(ננ³ƒרÿÿÿÿ8גדם¢ֲ-

@@ -1,17 +1,14 @@
 
-hsquid:S2095)"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(¾î¹–ûÿÿÿÿ
-Hsquid:S1481…"0Remove this unused "contentRows" local variable.(ı¬éĞ
-Tsquid:S1854*"8Remove this useless assignment to local variable "line".(×ì‰’ÿÿÿÿÿ
-?squid:S1148="#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-Wsquid:S1854…"?Remove this useless assignment to local variable "contentRows".(ı¬éĞ
-dsquid:S2095("HUse try-with-resources or close this "FileReader" in a "finally" clause.(Šª€òúÿÿÿÿ
-Fsquid:S1148?"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‰•¿ùÁ-
-O
-squid:S1060"9Replace this use of System.out or System.err by a logger.(ÈÅ÷Û
-ˆsquid:S1319%"qThe return type of this method should be an interface such as "List" rather than the implementation "LinkedList".(²•îä
-O
-squid:S106E"9Replace this use of System.out or System.err by a logger.(íÑ¨¿
-Bsquid:S11681"+Return an empty collection instead of null.(¥¹ï
-T
-squid:S106G"9Replace this use of System.out or System.err by a logger.(§ÆÈŞøÿÿÿÿ
-gsquid:CommentedOutCodeLineH"<This block of commented-out lines of code should be removed.(§ÃÃûÿÿÿÿ
+wsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(¦ì÷œ8Ã¹¦ŸÂ-
+V
+squid:S1060"9Replace this use of System.out or System.err by a logger.(íÑ¨¿8Ã¹¦ŸÂ-
+[
+squid:S1062"9Replace this use of System.out or System.err by a logger.(§ÆÈŞøÿÿÿÿ8Ã¹¦ŸÂ-
+Nsquid:S1481c"0Remove this unused "contentRows" local variable.(ı¬éĞ8Ã¹¦ŸÂ-
+]squid:S1854c"?Remove this useless assignment to local variable "contentRows".(ı¬éĞ8Ã¹¦ŸÂ-
+^squid:UselessImportCheck"3Remove this unused import 'java.io.BufferedReader'.(€é²Å8Ã¹¦ŸÂ-
+_squid:UselessImportCheck
+"/Remove this unused import 'java.io.FileReader'.(Â¡¢äşÿÿÿÿ8Ã¹¦ŸÂ-
+qsquid:UselessImportCheck"ARemove this unused import 'org.apache.commons.lang3.StringUtils'.(Øœ¼ºúÿÿÿÿ8Ã¹¦ŸÂ-
+Fsquid:S1148)"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ã¹¦ŸÂ-
+Fsquid:S11486"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ã¹¦ŸÂ-

@@ -1,30 +1,34 @@
 package hu.kissdavid.reader;
 
-
-import com.itextpdf.text.DocumentException;
-import hu.kissdavid.reader.readers.DateFetcher;
 import hu.kissdavid.reader.readers.ExcelReader;
-import hu.kissdavid.reader.readers.PDFReader;
 import hu.kissdavid.reader.readers.ReadDocx;
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import java.io.IOException;
+
+import java.io.File;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException, InvalidFormatException {
+    private static final String TEMP_PATH = "D:\\TO_PDF\\";
+
+    public static void main(String[] args)  {
 
         ExcelReader excelReader = new ExcelReader();
-        PDFReader pdfReader = new PDFReader();
 
 
-        Map<String, Set<String>> rowContainer = excelReader.readExcel("\\src\\main\\resources\\tesztadatok.xlsx");
-        ReadDocx readDocx = new ReadDocx();
+        Map<String, Set<String>> rowContainer = excelReader.readExcel(TEMP_PATH);
+        ReadDocx readDocx = new ReadDocx(rowContainer);
+        int n = rowContainer.values().iterator().next().size();
         try {
-            readDocx.processPDF( "\\src\\main\\resources\\sablon2.pdf", "D:\\test.pdf", rowContainer, 0);
-        } catch (DocumentException e) {
+            for(int i = 0; i < n; i++){
+                 readDocx.processPDF(TEMP_PATH , i);
+            }
+        } catch (Exception e) {
             e.printStackTrace();
+        }
+        finally {
+            new File(TEMP_PATH + "temp.html").delete();
         }
     }
 }

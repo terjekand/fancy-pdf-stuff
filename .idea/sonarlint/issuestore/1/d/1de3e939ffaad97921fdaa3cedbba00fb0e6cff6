@@ -1,2 +1,10 @@
 
-¢%squid:RedundantThrowsDeclarationCheck"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(şª°’şÿÿÿÿ
+Fsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÈƒùÂ-
+tsquid:UselessImportCheck"DRemove this unused import 'hu.kissdavid.reader.readers.DateFetcher'.(­î’ôşÿÿÿÿ8©É€Â-
+Osquid:S1481"1Remove this unused "rowContainer" local variable.(â¯…™8ÕÎ Â-
+^squid:S1854"@Remove this useless assignment to local variable "rowContainer".(â¯…™8ÕÎ Â-
+rsquid:UselessImportCheck"BRemove this unused import 'hu.kissdavid.reader.readers.PDFReader'.(ó‰ıøÿÿÿÿ8ÖõŞ¡Â-
+dsquid:UselessImportCheck":Remove this unused import 'java.io.ByteArrayOutputStream'.(Î‡È8¶ˆ»¡Â-
+psquid:UselessImportCheck"@Remove this unused import 'com.itextpdf.text.DocumentException'.(œûœıÿÿÿÿ8 ‡Ï Â-
+gsquid:UselessImportCheck	"<Remove this unused import 'org.apache.commons.io.FileUtils'.(À¿Ù´8Ôíù¡Â-
+Tsquid:UselessImportCheck")Remove this unused import 'java.io.File'.(†Ğ¥Å8Ôíù¡Â-

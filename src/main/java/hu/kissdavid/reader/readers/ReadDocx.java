@@ -1,64 +1,66 @@
 package hu.kissdavid.reader.readers;
 
+import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.pdf.*;
-import fr.opensagres.poi.xwpf.converter.pdf.PdfConverter;
-import fr.opensagres.poi.xwpf.converter.pdf.PdfOptions;
-import org.apache.poi.xwpf.usermodel.XWPFDocument;
-import org.apache.poi.xwpf.usermodel.XWPFParagraph;
+import com.itextpdf.text.pdf.PdfWriter;
+import com.itextpdf.tool.xml.XMLWorkerHelper;
+import org.apache.commons.io.FileUtils;
 
 import java.io.*;
 import java.util.*;
 
 public class ReadDocx {
 
-    public void ConvertToPDF(Map<String, Set<String>> rowContainer, String docPath, String pdfPath) {
+    private static final String NAME = "Név";
+    private byte[] bytes;
+    private Map<String, Set<String>> rowContainer;
 
-        File file = new File("");
-        try {
-            InputStream doc = new FileInputStream(file.getAbsolutePath() + docPath);
-            XWPFDocument  document = new XWPFDocument(doc);
-            PdfOptions options = PdfOptions.create();
-
-            Iterator paragraphIterator = document.getParagraphsIterator();
-
-
-            OutputStream out = new FileOutputStream(new File("D:\\converted.pdf"));
-            PdfConverter.getInstance().convert(document, out, options);
-            document.close();
-            out.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public ReadDocx(Map<String, Set<String>> rowContainer) {
+        this.rowContainer = rowContainer;
     }
 
-    public void processPDF(String src, String dest,Map<String, Set<String>> rowContainer, int index) throws IOException, DocumentException {
+    private String replaceKeys(Set<String> keySet, int index) throws UnsupportedEncodingException {
 
-        File file = new File("");
-        PdfReader reader = new PdfReader(file.getAbsolutePath() + src);
-        PdfDictionary dict = reader.getPageN(1);
-        PdfObject object = dict.getDirectObject(PdfName.CONTENTS);
+        Iterator keyIterator = keySet.iterator();
+        String text = new String(bytes,"UTF-8");
 
-        if(object instanceof PRStream) {
-            PRStream stream = (PRStream) object;
-            byte[] data = PdfReader.getStreamBytes(stream);
-            String dd = new String(data);
-
-            Set<String> keySet = rowContainer.keySet();
-            Iterator keyIterator = keySet.iterator();
-            while(keyIterator.hasNext()) {
-                String actualKey = (String) keyIterator.next();
-                ArrayList<String> actualValues = new ArrayList<>(rowContainer.get(actualKey));
-                System.out.println("key: " + actualKey);
-                System.out.println("value: " + actualValues.get(index));
-                actualKey = "@@" + actualKey + "@@";
-                dd = dd.replace(actualKey, actualValues.get(index));
-            }
-            stream.setData(dd.getBytes());
+        while(keyIterator.hasNext()) {
+            String actualKey = (String) keyIterator.next();
+            ArrayList<String> actualValues = new ArrayList<>(rowContainer.get(actualKey));
+            actualKey = "@@" + actualKey + "@@";
+            text = text.replace(actualKey, actualValues.get(index));
         }
-
-        PdfStamper stamper = new PdfStamper(reader, new FileOutputStream(dest));
-        stamper.close();
-        reader.close();
+        return text;
     }
+
+    private String nameFormatter(int index) {
+        String name = new ArrayList<>(rowContainer.get("Név")).get(index);
+        name = name.replaceAll(" ", "_");
+        name = name + "_" + index + ".pdf";
+        return name;
+    }
+
+    public void processPDF(String path, int index) throws IOException, DocumentException {
+
+        this.bytes = FileUtils.readFileToByteArray(new File(path + "sablon.html"));
+        Set<String> keySet = rowContainer.keySet();
+
+        String content = replaceKeys(keySet, index);
+
+        File xhtmlFile = new File(path + "temp.html");
+
+        FileUtils.writeByteArrayToFile(xhtmlFile, content.getBytes());
+
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+
+        Document document = new Document();
+        PdfWriter writer = PdfWriter.getInstance(document, baos);
+        document.open();
+        XMLWorkerHelper.getInstance().parseXHtml(writer, document, new FileInputStream(xhtmlFile));
+        document.close();
+        writer.close();
+
+        FileUtils.writeByteArrayToFile(new File(path + "pdf\\" + nameFormatter(index)), baos.toByteArray());
+    }
+
 }

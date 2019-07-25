@@ -1,6 +1,3 @@
-hu\kissdavid\reader\readers\DateFetcher.class
-hu\kissdavid\reader\readers\ExcelReader.class
-hu\kissdavid\reader\modifier\PDFmodifier.class
 hu\kissdavid\reader\Main.class
 hu\kissdavid\reader\readers\ReadDocx.class
-hu\kissdavid\reader\readers\PDFReader.class
+hu\kissdavid\reader\readers\ExcelReader.class

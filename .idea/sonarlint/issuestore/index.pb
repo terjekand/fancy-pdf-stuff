@@ -11,3 +11,11 @@ h
 8src/main/java/hu/kissdavid/reader/readers/PDFReader.java,6\0\60d2811837ac8ba8526ace5b4754b375ef4162b2
 j
 :src/main/java/hu/kissdavid/reader/readers/ExcelReader.java,c\7\c706385368c6cde41cb892253c47a5be4ebf8de0
+j
+:src/main/java/hu/kissdavid/reader/readers/DateFetcher.java,7\0\70f5a2b3195354a54f09f1f4494737b9f3e96741
+O
+src/main/resources/sablon2.html,9\f\9f058c9784da284a0cc4507c451fd365a3bed1f6
+h
+8src/main/java/hu/kissdavid/reader/ImageTagProcessor.java,7\f\7f425919999776f1efe7fa727e93667dd58523ac
+g
+7src/main/java/hu/kissdavid/reader/readers/ReadDocx.java,2\7\27ff124fe5c421a29cd9cc5ff62b95f1683206f8
